@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "60780395993",
+    "project_id": "fitness38-2e71c",
+    "storage_bucket": "fitness38-2e71c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:60780395993:android:3deb4e3e12e2ab38e76dc8",
+        "android_client_info": {
+          "package_name": "edu.neu.fitness_38"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "60780395993-ucfrv1cdebv7t4gdveop70kfdofmdo5a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBRNUndW3CTtnq3QWH0aKUl9q8BXPolKA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "60780395993-ucfrv1cdebv7t4gdveop70kfdofmdo5a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
