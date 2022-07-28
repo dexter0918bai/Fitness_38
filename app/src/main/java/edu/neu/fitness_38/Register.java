@@ -32,6 +32,7 @@ public class Register extends AppCompatActivity {
     Button myRegister;
     TextView Login;
     FirebaseAuth myAuth;
+    FirebaseUser myUser;
     ProgressBar progressBar;
 
     @Override
@@ -46,14 +47,22 @@ public class Register extends AppCompatActivity {
         myRegister = findViewById(R.id.Register);
 
         myAuth = FirebaseAuth.getInstance();
+        myUser = myAuth.getCurrentUser();
         progressBar = findViewById(R.id.Progress);
         Login = findViewById(R.id. Exist);
+
+
+        if (myUser != null) {
+            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            finish();
+        }
 
         myRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                final String email = myEmail.getText().toString().trim();
                String password = myPassword.getText().toString().trim();
+
                final String userName = myName.getText().toString();
                final String phone = myPhone.getText().toString();
 
@@ -68,7 +77,7 @@ public class Register extends AppCompatActivity {
                 }
 
                 if(password.length() < 6){
-                    myPassword.setError("Password Must be >= 6 Characters");
+                    myPassword.setError("Password at least 6 Characters");
                     return;
                 }
                 progressBar.setVisibility(View.VISIBLE);
@@ -83,40 +92,7 @@ public class Register extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-
-                            // send verification link
-
-                           // FirebaseUser fuser = myAuth.getCurrentUser();
-                           /* fuser.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
-                                @Override
-                                public void onSuccess(Void aVoid) {
-                                    Toast.makeText(Register.this, "Verification Email Has been Sent.", Toast.LENGTH_SHORT).show();
-                                }
-                            }).addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    Log.d(TAG, "onFailure: Email not sent " + e.getMessage());
-                                }
-                            });
-
-                           /* Toast.makeText(Register.this, "User Created.", Toast.LENGTH_SHORT).show();
-                            userID = fAuth.getCurrentUser().getUid();
-                            DocumentReference documentReference = fStore.collection("users").document(userID);
-                            Map<String,Object> user = new HashMap<>();
-                            user.put("fName",fullName);
-                            user.put("email",email);
-                            user.put("phone",phone);
-                            documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
-                                @Override
-                                public void onSuccess(Void aVoid) {
-                                    Log.d(TAG, "onSuccess: user Profile is created for "+ userID);
-                                }
-                            }).addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    Log.d(TAG, "onFailure: " + e.toString());
-                                }
-                            });*/
+                            Toast.makeText(Register.this, "Use Created! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(),MainActivity.class));
 
                         }else {

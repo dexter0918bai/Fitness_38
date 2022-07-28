@@ -21,6 +21,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class  Login extends AppCompatActivity {
     EditText  myEmail, myPassword;
@@ -28,6 +29,7 @@ public class  Login extends AppCompatActivity {
     TextView myCreat, forgetPassword;
     FirebaseAuth myAuth;
     ProgressBar progressBar;
+    FirebaseUser myUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,7 @@ public class  Login extends AppCompatActivity {
         myPassword = findViewById(R.id.Password);
         progressBar = findViewById(R.id.pBar);
         myAuth = FirebaseAuth.getInstance();
+        myUser = myAuth.getCurrentUser();
         myLogin = findViewById(R.id.login);
         myCreat = findViewById(R.id.creatAccount);
         forgetPassword = findViewById(R.id.fPassword);
