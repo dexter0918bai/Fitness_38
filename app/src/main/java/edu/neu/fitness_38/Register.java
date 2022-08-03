@@ -60,11 +60,11 @@ public class Register extends AppCompatActivity {
         myRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               final String email = myEmail.getText().toString().trim();
-               String password = myPassword.getText().toString().trim();
+                final String email = myEmail.getText().toString().trim();
+                String password = myPassword.getText().toString().trim();
 
-               final String userName = myName.getText().toString();
-               final String phone = myPhone.getText().toString();
+                final String userName = myName.getText().toString();
+                final String phone = myPhone.getText().toString();
 
                 if(TextUtils.isEmpty(email)){
                     myEmail.setError("Email is Required.");
@@ -92,8 +92,8 @@ public class Register extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            Toast.makeText(Register.this, "Use Created! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                            Toast.makeText(Register.this, "Use Created! ", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(),BasicInforActivity.class));
 
                         }else {
                             Toast.makeText(Register.this, "Something Wrong! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
@@ -106,7 +106,7 @@ public class Register extends AppCompatActivity {
 
 
 
-      Login.setOnClickListener(new View.OnClickListener() {
+        Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),Login.class));

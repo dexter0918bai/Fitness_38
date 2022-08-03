@@ -45,47 +45,47 @@ public class  Login extends AppCompatActivity {
         myCreat = findViewById(R.id.creatAccount);
         forgetPassword = findViewById(R.id.fPassword);
 
-       myLogin.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               String email = myEmail.getText().toString().trim();
-               String password = myPassword.getText().toString().trim();
+        myLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String email = myEmail.getText().toString().trim();
+                String password = myPassword.getText().toString().trim();
 
-               if(TextUtils.isEmpty(email)){
-                   myEmail.setError("Email is Required.");
-                   return;
-               }
+                if(TextUtils.isEmpty(email)){
+                    myEmail.setError("Email is Required.");
+                    return;
+                }
 
-               if(TextUtils.isEmpty(password)){
-                   myPassword.setError("Password is Required.");
-                   return;
-               }
+                if(TextUtils.isEmpty(password)){
+                    myPassword.setError("Password is Required.");
+                    return;
+                }
 
-               if(password.length() < 6){
-                   myPassword.setError("Password At Least 6 letters");
-                   return;
-               }
+                if(password.length() < 6){
+                    myPassword.setError("Password At Least 6 letters");
+                    return;
+                }
 
-               progressBar.setVisibility(View.VISIBLE);
+                progressBar.setVisibility(View.VISIBLE);
 
-               myAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                   @Override
-                   public void onComplete(@NonNull Task<AuthResult> task) {
-                       if(task.isSuccessful()){
-                           Toast.makeText(Login.this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
-                          // startActivity(new Intent(getApplicationContext(),MainActivity.class));
-                           startActivity(new Intent(getApplicationContext(), IntroPage.class));
-                       }else {
-                           Toast.makeText(Login.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                           progressBar.setVisibility(View.GONE);
-                       }
+                myAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful()){
+                            Toast.makeText(Login.this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+//                           startActivity(new Intent(getApplicationContext(), BasicInforActivity.class));
+                        }else {
+                            Toast.makeText(Login.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            progressBar.setVisibility(View.GONE);
+                        }
 
-                   }
-               });
+                    }
+                });
 
-//               startActivity(new Intent(getApplicationContext(), IntroPage.class));
-           }
-       });
+
+            }
+        });
 
         myCreat.setOnClickListener(new View.OnClickListener() {
             @Override
