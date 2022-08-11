@@ -1,11 +1,9 @@
 package edu.neu.fitness_38;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,8 +12,6 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -44,11 +40,11 @@ public class BasicInforActivity extends AppCompatActivity {
         String userId = user.getUid();
         progressBar = findViewById(R.id.progress);
 
-        userName = findViewById(R.id.Name);
-        userDoB = findViewById(R.id.DoB);
+        userName = findViewById(R.id.Name_p);
+        userDoB = findViewById(R.id.DoB_p);
         userHeight = findViewById(R.id.Height);
         userWeight = findViewById(R.id.CurrenWeight);
-        userTargetWeight = findViewById(R.id.TargetWeight);
+        userTargetWeight = findViewById(R.id.TargetWeight_p);
         confirm = findViewById(R.id.confirm);
         gender = findViewById(R.id.gender);
 

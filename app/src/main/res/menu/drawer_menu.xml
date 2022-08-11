@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single" >
+        <item android:id="@+id/home"
+            android:icon="@drawable/ic_home"
+            android:title="Home"/>
+
+        <item android:id="@+id/person"
+            android:icon="@drawable/ic_person"
+            android:title="User"/>
+
+        <item android:id="@+id/reminder"
+            android:icon="@drawable/ic_notification"
+            android:title="Reminder"/>
+
+        <item android:id="@+id/foodList"
+            android:icon="@drawable/ic_food_bank"
+            android:title="Food List" />
+
+
+        <item android:id="@+id/foodSummary"
+            android:icon="@drawable/ic_target"
+            android:title="Food Summary"/>
+
+
+    </group>
+
+    <item android:title="Other" >
+        <menu>
+            <group android:checkableBehavior="single" >
+            <item android:id="@+id/Share"
+                android:icon="@drawable/ic_share"
+                android:title="Share" />
+
+            <item android:id="@+id/LogOut"
+                android:icon="@drawable/ic_baseline_logout"
+                android:title="Log Out"/>
+
+            </group>
+        </menu>
+
+
+    </item>
+
+
+</menu>
