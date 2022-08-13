@@ -3,37 +3,25 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="../../../../layout/custom_preview.xml" value="0.14881953942908044" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.229" />
-        <entry key="app/src/main/res/drawable/circle.xml" value="0.157" />
-        <entry key="app/src/main/res/drawable/circulabar.xml" value="0.157" />
-        <entry key="app/src/main/res/drawable/ic_home.xml" value="0.155" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.229" />
-        <entry key="app/src/main/res/drawable/ic_send.xml" value="0.155" />
-        <entry key="app/src/main/res/drawable/ic_target.xml" value="0.155" />
         <entry key="app/src/main/res/drawable/shape.xml" value="0.3625" />
         <entry key="app/src/main/res/font/rammetto_one.xml" value="0.43385416666666665" />
-        <entry key="app/src/main/res/layout/activity_basic_infor.xml" value="0.4718475341796875" />
-        <entry key="app/src/main/res/layout/activity_food_summary.xml" value="0.30509185791015625" />
-        <entry key="app/src/main/res/layout/activity_foodlist.xml" value="0.4036458333333333" />
+        <entry key="app/src/main/res/layout/activity_add_reminder_page.xml" value="0.24947916666666667" />
+        <entry key="app/src/main/res/layout/activity_basic_infor.xml" value="0.3942352294921876" />
+        <entry key="app/src/main/res/layout/activity_food_summary.xml" value="0.2777777777777778" />
+        <entry key="app/src/main/res/layout/activity_foodlist.xml" value="0.2777777777777778" />
         <entry key="app/src/main/res/layout/activity_intro_page.xml" value="0.2776639344262295" />
         <entry key="app/src/main/res/layout/activity_login2.xml" value="0.5142979939778647" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.22239583333333332" />
-        <entry key="app/src/main/res/layout/activity_my_pie_chart_view.xml" value="0.38958333333333334" />
+        <entry key="app/src/main/res/layout/activity_one_line_reminder.xml" value="0.21822916666666667" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.2792622884114583" />
-        <entry key="app/src/main/res/layout/activity_reminder.xml" value="0.19630192502532928" />
-        <entry key="app/src/main/res/layout/activity_sure_or_cancle.xml" value="0.4036458333333333" />
-        <entry key="app/src/main/res/layout/activity_user_profile.xml" value="0.2672927856445313" />
-        <entry key="app/src/main/res/layout/activity_user_target.xml" value="0.3486984252929687" />
-        <entry key="app/src/main/res/layout/fooditem.xml" value="0.40260416666666665" />
+        <entry key="app/src/main/res/layout/activity_reminder.xml" value="0.21822916666666667" />
+        <entry key="app/src/main/res/layout/activity_user_target.xml" value="0.2872833251953124" />
         <entry key="app/src/main/res/layout/fragment_basic_information.xml" value="0.19285064697265625" />
         <entry key="app/src/main/res/layout/fragment_blank.xml" value="0.2667572463768116" />
-        <entry key="app/src/main/res/layout/fragment_user.xml" value="0.21822916666666667" />
-        <entry key="app/src/main/res/layout/layout_screen.xml" value="0.23173803526448364" />
-        <entry key="app/src/main/res/layout/loading_alert.xml" value="0.3473731884057971" />
-        <entry key="app/src/main/res/layout/navigation.xml" value="0.23399200439453124" />
-        <entry key="app/src/main/res/layout/user_infor_fragment.xml" value="0.34990692138671875" />
-        <entry key="app/src/main/res/menu/drawer_menu.xml" value="0.27760416666666665" />
+        <entry key="app/src/main/res/layout/layout_screen.xml" value="0.36820652173913043" />
+        <entry key="app/src/main/res/layout/one_line_reminder.xml" value="0.35351257324218754" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1655" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_background.xml" value="0.1655" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_background_round.xml" value="0.1655" />
