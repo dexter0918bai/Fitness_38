@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.229" />
+        <entry key="app/src/main/res/drawable-xxhdpi/calendar_foreground.xml" value="0.2685" />
+        <entry key="app/src/main/res/drawable-xxhdpi/time_foreground.xml" value="0.2685" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.229" />
         <entry key="app/src/main/res/drawable/shape.xml" value="0.3625" />
         <entry key="app/src/main/res/font/rammetto_one.xml" value="0.43385416666666665" />
