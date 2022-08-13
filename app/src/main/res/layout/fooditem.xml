@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:layout_marginTop="8dp"
+    android:background="@color/white"
+    android:paddingLeft="10dp"
+    android:paddingTop="6dp"
+    android:paddingRight="10dp">
+
+    <TextView
+        android:id="@+id/foodName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Food Name"
+        android:textColor="#222"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/unit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="6dp"
+        android:text="Food Unit"
+        android:textColor="#222"
+        android:textSize="16dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:background="#3e3e3e" />
+
+
+</RelativeLayout>

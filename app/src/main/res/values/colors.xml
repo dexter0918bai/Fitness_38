@@ -9,6 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="orange">#FFD600</color>
     <color name="gold">#FF8F00</color>
+    <color name="red">#FF3D00</color>
 
     <color name="colorPrimary">#ffffff</color>
     <color name="colorPrimaryDark">#ffffff</color>
