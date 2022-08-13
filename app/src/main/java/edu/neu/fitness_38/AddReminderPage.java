@@ -146,8 +146,8 @@ public class AddReminderPage extends AppCompatActivity {
         address = "";
 
         // set animaiton.
-//        scaleUp = AnimationUtils.loadAnimation(this, R.anim.scale_up);
-//        scaleDown = AnimationUtils.loadAnimation(this, R.anim.scale_down);
+        scaleUp = AnimationUtils.loadAnimation(this, R.anim.scale_up);
+        scaleDown = AnimationUtils.loadAnimation(this, R.anim.scale_down);
 
         // Initialization.
         initialSetting();
