@@ -46,6 +46,7 @@ public class ReminderViewAdapter extends RecyclerView.Adapter<ReminderViewAdapte
                 // send the control to the EditOnePage
                 Intent intent = new Intent(context, AddReminderPage.class);
                 intent.putExtra("id", reminderList.get(position).getId());
+                System.out.println("id: " + reminderList.get(position).getId());
                 context.startActivity(intent);
             }
         });

@@ -31,12 +31,7 @@ public class Reminder extends AppCompatActivity {
 
         addReminder = findViewById(R.id.addReminder_btn);
 
-        reminderList.add(new ReminderObj("play basketball", "Aug20,2022", "19:34"));
-        reminderList.add(new ReminderObj("play basketball", "Aug20,2022", "19:34"));
-        reminderList.add(new ReminderObj("play basketball", "Aug20,2022", "19:34"));
-        reminderList.add(new ReminderObj("play basketball", "Aug20,2022", "19:34"));
-        reminderList.add(new ReminderObj("play basketball", "Aug20,2022", "19:34"));
-        reminderList.add(new ReminderObj("play basketball", "Aug20,2022", "19:34"));
+        reminderList = MyApplication.getReminderList();
 
         addReminder.setOnClickListener(new View.OnClickListener() {
             @Override

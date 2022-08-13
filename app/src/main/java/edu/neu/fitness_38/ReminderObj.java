@@ -3,16 +3,16 @@ package edu.neu.fitness_38;
 import java.util.UUID;
 
 public class ReminderObj {
-    public String id;
+    public int id;
     public String description;
     public String date;
     public String time;
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -41,15 +41,15 @@ public class ReminderObj {
     }
 
     public ReminderObj() {
-        id = UUID.randomUUID().toString();
+        id = 0;
         description = "";
         date = "";
         time = "";
     }
 
-    public ReminderObj(String description,  String date,
+    public ReminderObj(int id, String description,  String date,
                     String time) {
-        this.id = UUID.randomUUID().toString();
+        this.id = id;
         this.description = description;
         this.date = date;
         this.time = time;

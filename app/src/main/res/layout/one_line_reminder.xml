@@ -10,9 +10,9 @@
         android:id="@+id/tv_desItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:text="Task name"
-        app:layout_constraintEnd_toStartOf="@+id/tv_dateItem"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -32,9 +32,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="152dp"
         android:text="Aug20, 2022"
-        app:layout_constraintEnd_toStartOf="@+id/tv_timeItem"
-        app:layout_constraintStart_toEndOf="@+id/tv_desItem"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
