@@ -159,6 +159,8 @@ public class AddReminderPage extends AppCompatActivity {
         System.out.println("back to main");
         String date = ((TextView)findViewById(R.id.dateSelector)).getText().toString();
         String time = ((TextView)findViewById(R.id.timeSelector)).getText().toString();
+        System.out.println("date: " + date);
+        System.out.println("time: " + time);
         if("".equals(date) || "".equals(time)) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setMessage("time or date cannot be empty")
@@ -169,11 +171,11 @@ public class AddReminderPage extends AppCompatActivity {
         }
         int[] dateSplit = toIntArray(date.split("/"));
         int[] timeSplit = toIntArray(time.split(":"));
-        String des = mDescription.getText().toString();
+//        String des = mDescription.getText().toString();
 
         System.out.println(Arrays.toString(dateSplit));
         System.out.println(Arrays.toString(timeSplit));
-        System.out.println(des);
+//        System.out.println(des);
 
         System.out.println("existed Alarm: " + existedAlarmNo);
         System.out.println("Ring Path: " + ringtonePath);
@@ -273,7 +275,6 @@ public class AddReminderPage extends AppCompatActivity {
         };
 
 
-//        setImageViewAnimaiton(mapSelector);
 
         // done button action.
         done.setOnClickListener(new View.OnClickListener() {
