@@ -50,65 +50,20 @@ import java.util.Date;
 public class AddReminderPage extends AppCompatActivity {
 
     private EditText nameInput;
-    private EditText mDescription;
     private TextView myTextDisplayDate;
     private TextView myTextDisplayTime;
     private DatePickerDialog.OnDateSetListener myDateSetListener;
     private TimePickerDialog.OnTimeSetListener myTimeSetListener;
-    private ImageView addPhoto;
-    private ImageView mapSelector;
-    private ImageView mic;
-    private ImageView photo;
-    private ImageView person;
     private Button done;
     private SharedPreferences mSharedPreference;
     private SharedPreferences.Editor mSharedEditor;
     private Gson gson;
     private ReminderObj reminder;
-    private TextView mRingtone;
 
     //date image view
     private ImageView displayDateImg;
     private ImageView displayTimeImg;
 
-    //ring image view
-    private ImageView ringImgView;
-
-    private AlertDialog dialog;
-    private AlertDialog.Builder dialogBuilder;
-
-    // id.
-    private String id;
-    // date and time.
-    private String dateString;
-    private String timeString;
-    // recording.
-
-    //location
-    private String address;
-    private double[] geoLoc;
-    private double[] currLoc;
-    TextView locationView;
-    ActivityResultLauncher<Intent> intentActivityResultLauncher;
-
-    //Alarm
-    private Spinner repeat;
-    private int existedAlarmNo;
-
-    //alarm id
-    private int Alarm_No;
-
-    //hashTag
-    private Spinner mHashtag;
-
-    // Contact view.
-    View contactView;
-    //contact info.
-    private String[] contact;
-
-    private EditText contactNameText;
-    private EditText contactPhoneText;
-    private EditText contactEmailText;
 
     // Some local variables needed for saving pictures to storage
     static final int REQUEST_IMAGE_CAPTURE = 1;
@@ -121,8 +76,6 @@ public class AddReminderPage extends AppCompatActivity {
     //button animation.
     Animation scaleUp, scaleDown;
 
-    private TextView recordingView;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -134,16 +87,9 @@ public class AddReminderPage extends AppCompatActivity {
         myTextDisplayDate = (TextView) findViewById(R.id.dateSelector);
         myTextDisplayTime = (TextView) findViewById(R.id.timeSelector);
         done = (Button) findViewById(R.id.saveData);
-        person = (ImageView) findViewById(R.id.person);
 
         displayTimeImg = (ImageView) findViewById(R.id.timeImageView);
         displayDateImg = (ImageView) findViewById(R.id.dataImageView);
-        ringImgView = (ImageView) findViewById(R.id.imageView2);
-
-
-        geoLoc = new double[2];
-        currLoc = getIntent().getDoubleArrayExtra("loc");
-        address = "";
 
         // set animaiton.
         scaleUp = AnimationUtils.loadAnimation(this, R.anim.scale_up);
@@ -175,13 +121,6 @@ public class AddReminderPage extends AppCompatActivity {
 
         System.out.println(Arrays.toString(dateSplit));
         System.out.println(Arrays.toString(timeSplit));
-//        System.out.println(des);
-
-        System.out.println("existed Alarm: " + existedAlarmNo);
-        System.out.println("Ring Path: " + ringtonePath);
-
-        //getLayoutInflater().inflate(R.layout.activity_main, null)
-        //                .getContext()
 
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
@@ -221,17 +160,6 @@ public class AddReminderPage extends AppCompatActivity {
 
         setImageViewAnimaiton(displayDateImg);
 
-        // on click listener for adding images to the description
-//        addPhoto.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                dispatchTakePictureIntent(); //take pictures
-//            }
-//        });
-
-//        setImageViewAnimaiton(addPhoto);
-
-        // on click listener for selecting ringtone
 
 
         // set date pick listener.
@@ -306,7 +234,6 @@ public class AddReminderPage extends AppCompatActivity {
                         if (result.getResultCode() == 1) {
                             assert result.getData() != null;
                             currentRecordingPath = result.getData().getStringExtra("recordingFile");
-                            recordingView.setText("Saved Recording");
                         }
                     }
                 });
@@ -398,71 +325,6 @@ public class AddReminderPage extends AppCompatActivity {
 //                if (currentRecordingPath != null) recordingView.setText("Saved Recording");
 //            }
 //        }
-//    }
-//
-//    private void initialDiglog() {
-//        dialogBuilder = new AlertDialog.Builder(this);
-//
-//        contactView = getLayoutInflater().inflate(R.layout.person_information, null);
-//        contactNameText = (EditText) contactView.findViewById(R.id.personName);
-//        contactPhoneText = (EditText) contactView.findViewById(R.id.personPhone);
-//        contactEmailText = (EditText) contactView.findViewById(R.id.personEmail);
-//
-//        dialogBuilder.setView(contactView);
-//
-//        dialogBuilder.setPositiveButton("OK" , new DialogInterface.OnClickListener() {
-//            public void onClick(DialogInterface dialog, int id) {
-//                // User clicked OK button
-//                // save contact information.
-//                contact = saveContactInfo();
-//            }
-//        });
-//        dialogBuilder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-//            public void onClick(DialogInterface dialog, int id) {
-//                // User cancelled the dialog, do nothing.
-//                if (contact == null) {
-//                    contact = new String[3];
-//                    contact[0] = "Name";
-//                    contact[1] = "Phone Number";
-//                    contact[2] = "Email";
-//                }
-//                contactNameText.setText(contact[0]);
-//                contactPhoneText.setText(contact[1]);
-//                contactEmailText.setText(contact[2]);
-//            }
-//        });
-//        dialog = dialogBuilder.create();
-//    }
-
-    private void showContactDialog() {
-        dialog.show();
-    }
-
-    // Helper to save contact information.
-    private String[] saveContactInfo() {
-        String[] res = new String[3];
-        res[0] = contactNameText.getText().toString();
-        res[1] = contactPhoneText.getText().toString();
-        res[2] = contactEmailText.getText().toString();
-        return res;
-    }
-
-//    private void showRecordingActivity() {
-//        Intent intent = new Intent(this, Recording.class);
-//        intent.putExtra("localRecordingFile", currentRecordingPath);
-//        intent.putExtra("id", id);
-//        recordLauncher.launch(intent);
-//    }
-//
-//    // This is a helper method to show map selector screen.
-//    private void showMapSelector() {
-//        Intent intent = new Intent(this, MapActivity.class);
-//        if (geoLoc[0] == 0 && geoLoc[1] == 0) {
-//            intent.putExtra("loc", loc.getGeoLoc());
-//        } else {
-//            intent.putExtra("loc", geoLoc);
-//        }
-//        intentActivityResultLauncher.launch(intent);
 //    }
 
     // This is a helper method to show date selector screen.
@@ -573,11 +435,6 @@ public class AddReminderPage extends AppCompatActivity {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            photo.setImageBitmap(imageBitmap);
-//            Bitmap scaledImage = Bitmap.createScaledBitmap(imageBitmap, 400, 400, false);
-            //addPhoto.setImageBitmap(imageBitmap);
-            //Drawable d = new BitmapDrawable(getResources(), scaledImage);
-            //mDescription.setCompoundDrawablesWithIntrinsicBounds(d, null, null, null);
 
             toast = Toast.makeText(getApplicationContext(), "Image saved successfully!", Toast.LENGTH_SHORT);
             toast.show();
@@ -586,7 +443,6 @@ public class AddReminderPage extends AppCompatActivity {
         // show a preview of the ringtone in the textview
         if (requestCode == 999 && resultCode == RESULT_OK) {
             Uri uri = data.getParcelableExtra(RingtoneManager.EXTRA_RINGTONE_PICKED_URI);
-            mRingtone.setText("Selected ringtone saved");
             ringtonePath = uri.toString();
             toast = Toast.makeText(getApplicationContext(), "Ringtone saved successfully!", Toast.LENGTH_SHORT);
             toast.show();
@@ -598,7 +454,6 @@ public class AddReminderPage extends AppCompatActivity {
     private void showImage(String path) {
         if (path != null) {
             Bitmap bitmap = BitmapFactory.decodeFile(path);
-            photo.setImageBitmap(bitmap);
             currentPhotoPath = path;
         }
     }
@@ -610,7 +465,6 @@ public class AddReminderPage extends AppCompatActivity {
      */
     private void settingDone() {
         String value = buildJson();
-        mSharedEditor.putString(id, value);
         mSharedEditor.apply();
     }
 
@@ -650,16 +504,5 @@ public class AddReminderPage extends AppCompatActivity {
         exitDialog.create().show();
     }
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
