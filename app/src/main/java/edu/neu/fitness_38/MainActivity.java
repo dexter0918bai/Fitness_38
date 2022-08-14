@@ -246,9 +246,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Intent intent = new Intent(Intent.ACTION_SEND);
                 intent.setType("text/plain");
                 String Body = "Today's burnt calorie";
-                //TODO: fetch the calorie that the user has burnt today and present it (Currently 123456.123456)
+                //TODO: fetch the calorie that the user has burnt today and present it (Currently 123456)
                 String Sub = getResources().getString(R.string.calorie);
-                String calorie = String.format(Sub, 123456.123456);
+                String calorie = String.format(Sub, 123456);
                 intent.putExtra(Intent.EXTRA_SUBJECT, Body);
                 intent.putExtra(Intent.EXTRA_TEXT, calorie);
                 startActivity(Intent.createChooser(intent, "Share Calorie"));
