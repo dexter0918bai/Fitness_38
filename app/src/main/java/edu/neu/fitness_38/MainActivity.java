@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.annotation.SuppressLint;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -218,6 +219,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
@@ -240,7 +242,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 drawer.closeDrawer(GravityCompat.START);
                 break;
             case R.id.Share:
-                Toast.makeText(MainActivity.this, "This feature is under development.", Toast.LENGTH_SHORT).show();
+                // Toast.makeText(MainActivity.this, "This feature is under development.", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                String Body = "Today's burnt calorie";
+                //TODO: fetch the calorie that the user has burnt today and present it (Currently 123456)
+                String Sub = getResources().getString(R.string.calorie);
+                String calorie = String.format(Sub, 123456);
+                intent.putExtra(Intent.EXTRA_SUBJECT, Body);
+                intent.putExtra(Intent.EXTRA_TEXT, calorie);
+                startActivity(Intent.createChooser(intent, "Share Calorie"));
                 break;
             case R.id.foodList:
                 Toast.makeText(MainActivity.this, "Food List is Clicked.", Toast.LENGTH_SHORT).show();
