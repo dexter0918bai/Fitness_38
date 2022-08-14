@@ -62,7 +62,7 @@ public class SimpleRun extends AppCompatActivity {
                                 runOnUiThread(() -> {
                                     int i = second++;
                                     time.setText("Time:" + i + " seconds");
-                                    curCalories = curCalories + 0.12f;
+                                    curCalories = curCalories + 0.22f;
                                     cal.setText("Calories:" + decimalFormat.format(curCalories) + " cal");
                                 });
                             }
