@@ -84,5 +84,18 @@
         android:visibility="gone"
         app:layout_constraintTop_toBottomOf="@+id/TargetStep" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="We suggest you set up the goal as 80% your BMR."
+        android:textColor="#FF9800"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/TargetCalorie"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.485" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
