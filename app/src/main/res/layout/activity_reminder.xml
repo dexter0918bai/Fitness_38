@@ -4,12 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Reminder"
-    >
+    tools:context=".Reminder">
 
     <TextView
+        android:id="@+id/textView5"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="hello"/>
+        tools:layout_editor_absoluteX="56dp"
+        tools:layout_editor_absoluteY="139dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/lv_reminderList"
+        android:layout_width="380dp"
+        android:layout_height="555dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/textView5"
+        app:layout_constraintStart_toEndOf="@+id/textView5"
+        app:layout_constraintTop_toTopOf="@+id/textView5" />
+
+    <Button
+        android:id="@+id/addReminder_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Add Reminder"
+        app:layout_constraintEnd_toStartOf="@+id/textView5"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/lv_reminderList" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
