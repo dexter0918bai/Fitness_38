@@ -242,9 +242,7 @@ public class AddReminderPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //call backtoMain before settingDone
-                //do not call backtoMain twice
                 backtoMain();
-//                settingDone();
             }
         });
 
@@ -274,10 +272,7 @@ public class AddReminderPage extends AppCompatActivity {
             myTextDisplayDate.setText(String.valueOf(reminderObj.getDate()));
             myTextDisplayTime.setText(reminderObj.getTime());
 
-        } else {
-            // create form
         }
-
     }
 
 
@@ -355,10 +350,7 @@ public class AddReminderPage extends AppCompatActivity {
         dialog.show();
     }
 
-    /*
-    Default path for the images:
-    Android/data/edu.neu.madcourse.cs5520_sp22_final_project/files/Pictures
-     */
+
     Toast toast;
 
     // Create temporary images files in the designated path
@@ -389,13 +381,10 @@ public class AddReminderPage extends AppCompatActivity {
         AlertDialog.Builder exitDialog = new AlertDialog.Builder(this);
         exitDialog.setMessage("Your changes will not be saved.\n" +
                 "Do you want to back to main menu?");
-//        exitDialog.setMessage("Auto save changes......");
 
         exitDialog.setPositiveButton("OK" , new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 // User clicked OK button
-//                backtoMain();
-//                settingDone();
                 finish();
             }
         });
