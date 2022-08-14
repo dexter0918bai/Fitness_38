@@ -16,7 +16,7 @@
         <entry key="app/src/main/res/drawable/shape.xml" value="0.3625" />
         <entry key="app/src/main/res/font/rammetto_one.xml" value="0.43385416666666665" />
         <entry key="app/src/main/res/layout/activity_add_reminder_page.xml" value="0.3333333333333333" />
-        <entry key="app/src/main/res/layout/activity_basic_infor.xml" value="0.4718475341796875" />
+        <entry key="app/src/main/res/layout/activity_basic_infor.xml" value="0.1782608695652174" />
         <entry key="app/src/main/res/layout/activity_food_summary.xml" value="0.30509185791015625" />
         <entry key="app/src/main/res/layout/activity_foodlist.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/activity_intro_page.xml" value="0.2776639344262295" />
@@ -35,7 +35,7 @@
         <entry key="app/src/main/res/layout/fragment_user.xml" value="0.21822916666666667" />
         <entry key="app/src/main/res/layout/layout_screen.xml" value="0.23173803526448364" />
         <entry key="app/src/main/res/layout/loading_alert.xml" value="0.3473731884057971" />
-        <entry key="app/src/main/res/layout/navigation.xml" value="0.23399200439453124" />
+        <entry key="app/src/main/res/layout/navigation.xml" value="0.1" />
         <entry key="app/src/main/res/layout/one_line_reminder.xml" value="0.31023550724637683" />
         <entry key="app/src/main/res/layout/user_infor_fragment.xml" value="0.34990692138671875" />
         <entry key="app/src/main/res/menu/drawer_menu.xml" value="0.27760416666666665" />

@@ -44,7 +44,7 @@ public class SimpleRun extends AppCompatActivity {
             }
         }
 
-        DecimalFormat decimalFormat = new DecimalFormat("0.00");//构造方法的字符格式这里如果小数不足2位,会以0补足.
+        DecimalFormat decimalFormat = new DecimalFormat("0.00");
 
         start.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,9 +61,9 @@ public class SimpleRun extends AppCompatActivity {
                                 Thread.sleep(1000);
                                 runOnUiThread(() -> {
                                     int i = second++;
-                                    time.setText("time:" + i + "seconds");
+                                    time.setText("Time:" + i + "seconds");
                                     curCalories = curCalories + 0.12f;
-                                    cal.setText("calories:" + decimalFormat.format(curCalories) + "g");
+                                    cal.setText("Calories:" + decimalFormat.format(curCalories) + "cal");
                                 });
                             }
                         } catch (InterruptedException e) {

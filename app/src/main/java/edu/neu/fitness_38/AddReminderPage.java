@@ -23,6 +23,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
@@ -88,6 +89,9 @@ public class AddReminderPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_reminder_page);
 
+        if (getSupportActionBar()!=null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
         reminder = new ReminderObj();
         description = (EditText) findViewById(R.id.editTextTaskName);
         myTextDisplayDate = (TextView) findViewById(R.id.dateSelector);
@@ -276,6 +280,7 @@ public class AddReminderPage extends AppCompatActivity {
 
     }
 
+
     //Helper to set button animation.
     private void setButtonAnimaiton(Button btn) {
         btn.setOnTouchListener(new View.OnTouchListener() {
@@ -402,4 +407,15 @@ public class AddReminderPage extends AppCompatActivity {
         });
         exitDialog.create().show();
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish(); // back button
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 }

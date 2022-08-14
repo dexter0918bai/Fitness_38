@@ -15,13 +15,12 @@ public class MyApplication extends Application {
     }
 
     private void fillReminderList() {
+/*       reminderList.add(new ReminderObj("play basketball", "Aug20,2022", "19:34"));
 //        reminderList.add(new ReminderObj("play basketball", "Aug20,2022", "19:34"));
 //        reminderList.add(new ReminderObj("play basketball", "Aug20,2022", "19:34"));
 //        reminderList.add(new ReminderObj("play basketball", "Aug20,2022", "19:34"));
 //        reminderList.add(new ReminderObj("play basketball", "Aug20,2022", "19:34"));
-//        reminderList.add(new ReminderObj("play basketball", "Aug20,2022", "19:34"));
-//        reminderList.add(new ReminderObj("play basketball", "Aug20,2022", "19:34"));
-
+    reminderList.add(new ReminderObj("play basketball", "Aug20,2022", "19:34"));*/
     }
 
     public static List<ReminderObj> getReminderList() {

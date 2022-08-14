@@ -102,12 +102,12 @@
 
             android:paddingEnd="20dp"
             android:background="@drawable/shape"
-            android:hint="Height"
+            android:hint="Height (cm)"
             android:minHeight="48dp" />
 
 
         <EditText
-            android:id="@+id/CurrenWeight"
+            android:id="@+id/CurrentWeight"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:paddingStart="20dp"
@@ -115,7 +115,7 @@
 
             android:paddingEnd="20dp"
             android:background="@drawable/shape"
-            android:hint="CurrenWeight" />
+            android:hint="CurrentWeight (kg)" />
 
         <EditText
             android:id="@+id/TargetWeight_p"
@@ -126,7 +126,7 @@
 
             android:paddingEnd="20dp"
             android:background="@drawable/shape"
-            android:hint="TargetWeight" />
+            android:hint="TargetWeight (kg)" />
 
     </LinearLayout>
 

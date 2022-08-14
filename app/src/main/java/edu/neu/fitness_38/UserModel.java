@@ -11,8 +11,18 @@ public class UserModel {
     private String height;
     private String weight;
     private String targetWeight;
+    private String email = "";
     private int targetCalorie;
     private int targetStep ;
+
+    public String getEmail(){
+        return email;
+    }
+
+    public UserModel setEmail(String email){
+        this.email = email;
+        return this;
+    }
 
     public int getTargetCalorie(){
         return targetCalorie;

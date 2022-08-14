@@ -18,11 +18,18 @@ import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -35,12 +42,14 @@ import edu.neu.fitness_38.view.CircleView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
-    TextView tvDate;
+    TextView tvDate,userName,userEmail;
     CircleView calProgress;
     CircleView stepProgress;
+
     TextView stepTvBottom, calTvBottom;
     public static String Today = "";
     public static String TAG = "MainActivity";
+
 
     private List<CalorieBean> beans;
     private int targetStep;
@@ -49,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private boolean isFinishStepTask = false;
     private boolean isSelectToday = true;
 
+    private FirebaseUser currentUser;
     private int dateIndex;
     private List<String> dates;
     private String today;
@@ -85,6 +95,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         calProgress = findViewById(R.id.calCircleProgress);
         stepProgress = findViewById(R.id.stepCircleProgress);
         stepTvBottom = findViewById(R.id.stepprogress);
+
 
 
 

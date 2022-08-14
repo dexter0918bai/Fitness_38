@@ -63,6 +63,11 @@ public class Register extends AppCompatActivity {
     }
 
     private void initView() {
+
+
+        if (getSupportActionBar()!=null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
         myName = findViewById(R.id.Name_p);
         myEmail = findViewById(R.id.Email);
         myPassword = findViewById(R.id.Password);

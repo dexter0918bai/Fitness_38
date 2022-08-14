@@ -43,7 +43,7 @@ public class BasicInforActivity extends AppCompatActivity {
         userName = findViewById(R.id.Name_p);
         userDoB = findViewById(R.id.DoB_p);
         userHeight = findViewById(R.id.Height);
-        userWeight = findViewById(R.id.CurrenWeight);
+        userWeight = findViewById(R.id.CurrentWeight);
         userTargetWeight = findViewById(R.id.TargetWeight_p);
         confirm = findViewById(R.id.confirm);
         gender = findViewById(R.id.gender);

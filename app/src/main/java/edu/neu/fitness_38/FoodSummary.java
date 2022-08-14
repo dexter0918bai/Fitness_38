@@ -60,7 +60,7 @@ public class FoodSummary extends AppCompatActivity {
         pieChart.setHoleRadius(60f);
         pieChart.setCenterText("Your Daily Nutrients");
         pieChart.setCenterTextSize(16f);
-        pieChart.setCenterTextColor(Color.BLUE);
+        pieChart.setCenterTextColor(Color.BLACK);
         pieChart.setRotationAngle(90);
         pieChart.setRotationEnabled(true);
         pieChart.setUsePercentValues(true);
@@ -83,7 +83,7 @@ public class FoodSummary extends AppCompatActivity {
         ArrayList<Integer> colorList = new ArrayList<>();
         colorList.add(Color.RED);
         colorList.add(Color.BLUE);
-        colorList.add(Color.YELLOW);
+        colorList.add(Color.GREEN);
         pieDataSet.setColors(colorList);
         pieDataSet.setValueTextColor(Color.WHITE);
         pieDataSet.setValueTextSize(15f);
@@ -143,7 +143,7 @@ public class FoodSummary extends AppCompatActivity {
 
 
             ((TextView) findViewById(R.id.car)).setTextColor(Color.RED);
-            ((TextView) findViewById(R.id.pro)).setTextColor(Color.YELLOW);
+            ((TextView) findViewById(R.id.pro)).setTextColor(Color.GREEN);
             ((TextView) findViewById(R.id.fat)).setTextColor(Color.BLUE);
         }
     }
