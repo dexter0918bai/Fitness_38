@@ -16,7 +16,7 @@ public class StepDetector implements SensorEventListener{
         float gravityOld = 0;
         final float InitialValue = (float) 1.3;
         float ThreadValue = (float) 2.0;
-        int TimeInterval = 250;
+        int TimeInterval = 150;
         private StepCountListener mStepListeners;
 
         @Override

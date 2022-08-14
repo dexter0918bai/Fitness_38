@@ -18,7 +18,7 @@ import android.util.Log;
 import edu.neu.fitness_38.R;
 
 public class StepService extends Service implements SensorEventListener {
-    static final int LOCATION_SERVICE = 123;
+    static final int LOCATION_SERVICE = 100;
 
 
     private int buSu = 0;
@@ -27,7 +27,7 @@ public class StepService extends Service implements SensorEventListener {
     private StepUi mCallback;
     private static int stepSensorType = -1;
     private boolean hasRecord = false;
-    private int previosuStepC = 0;
+    private int previousStep = 0;
 
     private StepBinder stepBinder = new StepBinder();
 
@@ -109,9 +109,9 @@ public class StepService extends Service implements SensorEventListener {
                 haveStepCount = tempStep;
             } else {
                 int thisStepCount = tempStep - haveStepCount;
-                int thisStep = thisStepCount - previosuStepC;
+                int thisStep = thisStepCount - previousStep;
                 buSu += (thisStep);
-                previosuStepC = thisStepCount;
+                previousStep = thisStepCount;
                 setStep(thisStepCount);
             }
         } else if (stepSensorType == Sensor.TYPE_STEP_DETECTOR) {
@@ -179,4 +179,5 @@ public class StepService extends Service implements SensorEventListener {
 
     static final String NOTIFICATION_CHANNEL = "fitness38";
     private static final String TAG = StepService.class.getSimpleName();
+
 }

@@ -17,12 +17,12 @@ public class StepCount implements StepCountListener {
     public void countStep() {
         this.timeOfLastPeak = this.timeOfThisPeak;
         this.timeOfThisPeak = System.currentTimeMillis();
-        Log.i("countStep", "传感器数据刷新回调");
+        Log.i("countStep", "sensor working");
 //        notifyListener();
-        if (this.timeOfThisPeak - this.timeOfLastPeak <= 3000L) {
-            if (this.count < 9) {
+        if (this.timeOfThisPeak - this.timeOfLastPeak <= 2000L) {
+            if (this.count < 2) {
                 this.count++;
-            } else if (this.count == 9) {
+            } else if (this.count == 2) {
                 this.count++;
                 this.mCount += this.count;
                 notifyListener();
@@ -30,14 +30,14 @@ public class StepCount implements StepCountListener {
                 this.mCount++;
                 notifyListener();
             }
-        } else {//超时
+        } else {
             this.count = 1;//为1,不是0
         }
 
     }
 
-    public void setSteps(int initNowBusu) {
-        this.mCount = initNowBusu;//接收上层调用传递过来的当前步数
+    public void setSteps(int initNow) {
+        this.mCount = initNow;
         this.count = 0;
         timeOfLastPeak = 0;
         timeOfThisPeak = 0;
