@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -13,6 +15,25 @@
         tools:layout_editor_absoluteX="56dp"
         tools:layout_editor_absoluteY="139dp" />
 
+    <androidx.appcompat.widget.Toolbar
+
+
+        android:id="@+id/toolbar"
+        android:layout_width="45dp"
+        android:layout_height="53dp"
+        android:background="@color/white"
+        android:elevation="4dp"
+        android:theme="@style/Theme.Fitness_38.NoActionBar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:popupTheme="@style/Theme.Fitness_38" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/lv_reminderList"
         android:layout_width="380dp"
@@ -20,7 +41,18 @@
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toStartOf="@+id/textView5"
         app:layout_constraintStart_toEndOf="@+id/textView5"
-        app:layout_constraintTop_toTopOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+<!--    <com.google.android.material.navigation.NavigationView-->
+<!--        android:id="@+id/nav_view"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_gravity="start"-->
+<!--        app:headerLayout="@layout/navigation"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:menu="@menu/drawer_menu" />-->
 
     <Button
         android:id="@+id/addReminder_btn"
