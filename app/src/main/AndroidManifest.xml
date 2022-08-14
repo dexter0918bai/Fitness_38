@@ -7,14 +7,25 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-    <uses-feature
-        android:name="android.hardware.sensor.stepcounter"
-        android:required="true" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.PERMISSION_GRANTED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+
+    <uses-feature android:name="android.hardware.sensor.accelerometer" />
     <uses-feature
         android:name="android.hardware.sensor.stepdetector"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.sensor.stepcounter"
         android:required="true" />
 
     <uses-permission android:name="android.permission.PERMISSION_GRANTED" />
@@ -39,6 +50,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fitness_38"
         tools:targetApi="31">
+        <activity
+            android:name=".AddReminderPage"
+            android:exported="false" />
+        <activity
+            android:name=".SimpleRun"
+            android:exported="false" />
         <activity
             android:name=".UserProfile"
             android:exported="false" />
@@ -85,6 +102,11 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+        <service
+            android:name=".StepCounter.StepService"
+            android:enabled="true"
+            android:exported="true" />
     </application>
 
 </manifest>

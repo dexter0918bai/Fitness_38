@@ -10,24 +10,20 @@ import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.tencent.mmkv.MMKV;
 
-import edu.neu.fitness_38.FoodBean;
 import edu.neu.fitness_38.databinding.ActivityFoodSummaryBinding;
-import java.lang.reflect.Type;
+
 import java.text.DecimalFormat;
-import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.ToDoubleFunction;
 import java.util.stream.Collectors;
 
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 public class FoodSummary extends AppCompatActivity {
@@ -39,9 +35,21 @@ public class FoodSummary extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food_summary);
+        if (getSupportActionBar()!=null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
         pieChart = findViewById(R.id.pieChart);
         PieData pieData = getPieData();
         showChart(pieChart, pieData);
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish(); // back button
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void showChart(PieChart pieChart, PieData pieData) {
@@ -89,13 +97,13 @@ public class FoodSummary extends AppCompatActivity {
     private void getFoodsData(ArrayList<PieEntry> yrrayList) {
 
         String stepList = String.valueOf(SharePreferenceUtil.getInstance().get(this, "stepList", ""));
-        ArrayList<StepBean> beans = new Gson().fromJson(stepList, new TypeToken<ArrayList<StepBean>>() {
+        ArrayList<CalorieBean> beans = new Gson().fromJson(stepList, new TypeToken<ArrayList<CalorieBean>>() {
         }.getType());
         if (beans == null || beans.size() == 0) {
             return;
         }
         for (int i = 0; i < beans.size(); i++) {
-            StepBean stepsBean = beans.get(i);
+            CalorieBean stepsBean = beans.get(i);
             if (TextUtils.equals(MainActivity.Today, stepsBean.getDate())) {
                 double fat = stepsBean.getFat();
                 double protein = stepsBean.getProtein();

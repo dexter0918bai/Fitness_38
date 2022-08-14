@@ -5,6 +5,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -96,6 +97,9 @@ public class UserProfile extends AppCompatActivity {
     }
 
     private void initView() {
+        if (getSupportActionBar()!=null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
         imageView = (ImageView) findViewById(R.id.imageView);
         linearLayout = (LinearLayout) findViewById(R.id.linearLayout);
         NameP = (TextView) findViewById(R.id.Name_p);
@@ -105,5 +109,14 @@ public class UserProfile extends AppCompatActivity {
         TargetWeightP = (TextView) findViewById(R.id.TargetWeight_p);
         targetStepP = (TextView) findViewById(R.id.targetStep_p);
         targetCalorieP = (TextView) findViewById(R.id.targetCalorie_p);
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish(); // back button
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

@@ -5,7 +5,7 @@ public class AllFood {
     public static final String foodList="[{\n" +
             "\n" +
             "\t\t\"FoodName\": \"apple\",\n" +
-            "\t\t\"Food Calorie\": 110,\n" +
+            "\t\t\"foodCalorie\": 110,\n" +
             "\t\t\"Carb\": 29.3,\n" +
             "\t\t\"Fat\": 0.4,\n" +
             "\t\t\"Protein\": 0.6,\n" +
@@ -13,7 +13,7 @@ public class AllFood {
             "\t},\n" +
             "\t{\n" +
             "\t\t\"FoodName\": \"orange\",\n" +
-            "\t\t\"FoodCalorie\": 30,\n" +
+            "\t\t\"foodCalorie\": 30,\n" +
             "\t\t\"Carb\": 200,\n" +
             "\t\t\"Fat\": 300,\n" +
             "\t\t\"Protein\": 30,\n" +
@@ -21,7 +21,7 @@ public class AllFood {
             "\t},\n" +
             "\t{\n" +
             "\t\t\"FoodName\": \"Grape\",\n" +
-            "\t\t\"FoodCalorie\": 69,\n" +
+            "\t\t\"foodCalorie\": 69,\n" +
             "\t\t\"Carb\": 18.1,\n" +
             "\t\t\"Fat\": 0.2,\n" +
             "\t\t\"Protein\": 0.7,\n" +
@@ -29,49 +29,49 @@ public class AllFood {
             "\t},\n" +
             "\t{\n" +
             "\t\t\"FoodName\": \"banana\",\n" +
-            "\t\t\"Food Calorie\": 105,\n" +
+            "\t\t\"foodCalorie\": 105,\n" +
             "\t\t\"Carb\": 27,\n" +
             "\t\t\"Fat\": 0.4,\n" +
             "\t\t\"Protein\": 1.3,\n" +
             "\t\t\"Unit\": \"per\"\n" +
             "\t}, {\n" +
             "\t\t\"FoodName\": \"Avocado\",\n" +
-            "\t\t\"Food Calorie\": 20,\n" +
+            "\t\t\"foodCalorie\": 20,\n" +
             "\t\t\"Carb\": 0.6,\n" +
             "\t\t\"Fat\": 1.8,\n" +
             "\t\t\"Protein\": 0.6,\n" +
             "\t\t\"Unit\": \"10g\"\n" +
             "\t}, {\n" +
             "\t\t\"FoodName\": \"Watermelon\",\n" +
-            "\t\t\"Food Calorie\": 30,\n" +
+            "\t\t\"foodCalorie\": 30,\n" +
             "\t\t\"Carb\": 7.6,\n" +
             "\t\t\"Fat\": 0.1,\n" +
             "\t\t\"Protein\": 0.6,\n" +
             "\t\t\"Unit\": \"100g\"\n" +
             "\t}, {\n" +
             "\t\t\"FoodName\": \"Pineapple\",\n" +
-            "\t\t\"Food Calorie\": 50,\n" +
+            "\t\t\"foodCalorie\": 50,\n" +
             "\t\t\"Carb\": 13.1,\n" +
             "\t\t\"Fat\": 0.1,\n" +
             "\t\t\"Protein\": 0.5,\n" +
             "\t\t\"Unit\": \"100g\"\n" +
             "\t}, {\n" +
             "\t\t\"FoodName\": \"Pear\",\n" +
-            "\t\t\"Food Calorie\": 95,\n" +
+            "\t\t\"foodCalorie\": 95,\n" +
             "\t\t\"Carb\": 25.3,\n" +
             "\t\t\"Fat\": 0.2,\n" +
             "\t\t\"Protein\": 0.6,\n" +
             "\t\t\"Unit\": \"per\"\n" +
             "\t}, {\n" +
             "\t\t\"FoodName\": \"Strawberry\",\n" +
-            "\t\t\"Food Calorie\": 32,\n" +
+            "\t\t\"foodCalorie\": 32,\n" +
             "\t\t\"Carb\": 7.7,\n" +
             "\t\t\"Fat\": 0.3,\n" +
             "\t\t\"Protein\": 0.7,\n" +
             "\t\t\"Unit\": \"100g\"\n" +
             "\t}, {\n" +
             "\t\t\"FoodName\": \"Kiwi\",\n" +
-            "\t\t\"Food Calorie\": 108,\n" +
+            "\t\t\"foodCalorie\": 108,\n" +
             "\t\t\"Carb\": 26,\n" +
             "\t\t\"Fat\": 0.9,\n" +
             "\t\t\"Protein\": 2,\n" +
@@ -438,49 +438,49 @@ public class AllFood {
             "\t\t\"Unit\": \"110g\"\n" +
             "\t}, {\n" +
             "\t\t\"FoodName\": \"Quinoa\",\n" +
-            "\t\t\"Food Calorie\": 378,\n" +
+            "\t\t\"foodCalorie\": 378,\n" +
             "\t\t\"Carb\": 71.1,\n" +
             "\t\t\"Fat\": 5.6,\n" +
             "\t\t\"Protein\": 11.1,\n" +
             "\t\t\"Unit\": \"100g\"\n" +
             "\t}, {\n" +
             "\t\t\"FoodName\": \"Corn \",\n" +
-            "\t\t\"Food Calorie\": 86,\n" +
+            "\t\t\"foodCalorie\": 86,\n" +
             "\t\t\"Carb\": 18.7,\n" +
             "\t\t\"Fat\": 1.4,\n" +
             "\t\t\"Protein\": 3.3,\n" +
             "\t\t\"Unit\": \"100g\"\n" +
             "\t}, {\n" +
             "\t\t\"FoodName\": \"Green beans\",\n" +
-            "\t\t\"Food Calorie\": 31,\n" +
+            "\t\t\"foodCalorie\": 31,\n" +
             "\t\t\"Carb\": 7,\n" +
             "\t\t\"Fat\": 0.2,\n" +
             "\t\t\"Protein\": 1.8,\n" +
             "\t\t\"Unit\": \"100g\"\n" +
             "\t}, {\n" +
             "\t\t\"FoodName\": \"Taro\",\n" +
-            "\t\t\"Food Calorie\": 116,\n" +
+            "\t\t\"foodCalorie\": 116,\n" +
             "\t\t\"Carb\": 27.5,\n" +
             "\t\t\"Fat\": 0.2,\n" +
             "\t\t\"Protein\": 1.6,\n" +
             "\t\t\"Unit\": \"100g\"\n" +
             "\t}, {\n" +
             "\t\t\"FoodName\": \"Lotus\",\n" +
-            "\t\t\"Food Calorie\": 74,\n" +
+            "\t\t\"foodCalorie\": 74,\n" +
             "\t\t\"Carb\": 17.2,\n" +
             "\t\t\"Fat\": 0.1,\n" +
             "\t\t\"Protein\": 2.6,\n" +
             "\t\t\"Unit\": \"100g\"\n" +
             "\t}, {\n" +
             "\t\t\"FoodName\": \"Soba\",\n" +
-            "\t\t\"Food Calorie\": 100,\n" +
+            "\t\t\"foodCalorie\": 100,\n" +
             "\t\t\"Carb\": 21.4,\n" +
             "\t\t\"Fat\": 0.1,\n" +
             "\t\t\"Protein\": 5.1,\n" +
             "\t\t\"Unit\": \"100g\"\n" +
             "\t}, {\n" +
             "\t\t\"FoodName\": \"Asparagus\",\n" +
-            "\t\t\"Food Calorie\": 20,\n" +
+            "\t\t\"foodCalorie\": 20,\n" +
             "\t\t\"Carb\": 3.9,\n" +
             "\t\t\"Fat\": 0.1,\n" +
             "\t\t\"Protein\": 2.2,\n" +

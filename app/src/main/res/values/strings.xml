@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Fitness_38</string>
     <string name="email">Email</string>
+    <string name="calorie">Today I\'ve burnt %1$d calorie!</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

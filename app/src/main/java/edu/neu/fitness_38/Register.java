@@ -2,8 +2,13 @@ package edu.neu.fitness_38;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -28,12 +33,36 @@ public class Register extends AppCompatActivity {
     FirebaseAuth myAuth;
     FirebaseUser myUser;
     ProgressBar progressBar;
+    private static final String[] RECOGNITION_PERMISSION = {Manifest.permission.ACTIVITY_RECOGNITION};
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        initView();
+
+
+        if (myUser != null) {
+            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            finish();
+        }
+
+        checkPermission();
+
+    }
+
+    private void checkPermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            int get = ContextCompat.checkSelfPermission(this, RECOGNITION_PERMISSION[0]);
+            if (get != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(this, RECOGNITION_PERMISSION, 321);
+            }
+        }
+    }
+
+    private void initView() {
         myName = findViewById(R.id.Name_p);
         myEmail = findViewById(R.id.Email);
         myPassword = findViewById(R.id.Password);
@@ -44,13 +73,6 @@ public class Register extends AppCompatActivity {
         myUser = myAuth.getCurrentUser();
         progressBar = findViewById(R.id.Progress);
         Login = findViewById(R.id. Exist);
-
-
-        if (myUser != null) {
-            startActivity(new Intent(getApplicationContext(), MainActivity.class));
-            finish();
-        }
-
         myRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -106,6 +128,5 @@ public class Register extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),Login.class));
             }
         });
-
     }
 }

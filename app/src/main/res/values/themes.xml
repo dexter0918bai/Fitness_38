@@ -17,6 +17,10 @@
     <style name="Theme.Fitness_38.NoActionBar">
         <item name="windowActionBar" >false</item>
         <item name="windowNoTitle">true</item>
+        <!-- 设置Menu菜单的背景色 -->
+        <item name="android:itemBackground">@color/gold</item>
+        <!-- 设置Menu菜单的字体颜色 -->
+        <item name="android:textColorPrimary">@color/white</item>
 
     </style>
 

@@ -63,6 +63,8 @@ public class UserTarget extends AppCompatActivity {
                 progressBar.setVisibility(View.GONE);
                 next.setVisibility(View.VISIBLE);
                 //no problem, jump tp intropage
+                SharePreferenceUtil.getInstance().put(UserTarget.this, "targetCalorie", Integer.parseInt(targetCalorie.getText().toString()));
+                SharePreferenceUtil.getInstance().put(UserTarget.this, "targetStep", Integer.parseInt(targetStep.getText().toString()));
                 if (task.getException() == null) {
                     Intent myIntent = new Intent(getApplicationContext(), IntroPage.class);
                     startActivity(myIntent);

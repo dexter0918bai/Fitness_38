@@ -14,16 +14,12 @@ import android.util.Log;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.tencent.mmkv.MMKV;
 
-import edu.neu.fitness_38.FoodBean;
-
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
 
-import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -40,6 +36,9 @@ public class FoodList extends AppCompatActivity {
         setContentView(R.layout.activity_foodlist);
 
         setTitle("Food List");
+        if (getSupportActionBar()!=null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
         editText = findViewById(R.id.editText);
 
         allData = new Gson().fromJson(AllFood.foodList, new TypeToken<ArrayList<FoodBean>>() {
@@ -66,6 +65,8 @@ public class FoodList extends AppCompatActivity {
                             Double carb = foodBean.getCarb();
 
                             saveFoodCalorie(foodCalorie, fat, protein, carb);
+
+
                             Toast.makeText(FoodList.this, "You add one or 100g : " + foodBean.getFoodName(), Toast.LENGTH_SHORT).show();
                             dialog.dismiss();
                         }
@@ -76,7 +77,7 @@ public class FoodList extends AppCompatActivity {
         rv = findViewById(R.id.foodItem);
         rv.setLayoutManager(new LinearLayoutManager(this));
         rv.setAdapter(listFoodAdapter);
-        //EditText 监听事件
+
         editText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -106,22 +107,25 @@ public class FoodList extends AppCompatActivity {
             }
         });
 
+
+
     }
 
-    private void saveFoodCalorie(Integer foodCalorie, Double fat, Double protein, Double carb) {
-        String calorie = MMKV.defaultMMKV().decodeString("calorie");
-        Type type = new TypeToken<ArrayList<CalorieBean>>() {
-        }.getType();
-        List<CalorieBean> beans = new Gson().fromJson(calorie, type);
+    private void saveFoodCalorie(float foodCalorie, Double fat, Double protein, Double carb) {
+        String cal = String.valueOf(SharePreferenceUtil.getInstance().get(this,"stepList",""));
+        ArrayList<CalorieBean> beans = new Gson().fromJson(cal, new TypeToken<ArrayList<CalorieBean>>() {
+        }.getType());
+        if (beans == null ){}
 
         for (int i = 0; i < beans.size(); i++) {
             String date = beans.get(i).getDate();
-            if (TextUtils.equals(date, AllFood.TODAY)) {
+            if(TextUtils.equals(date,MainActivity.Today)){
                 CalorieBean calorieBean = beans.get(i);
-                Double food = calorieBean.getCalorie();
+                float calorie = calorieBean.getCalories();
                 Log.d("calorie", "calorie1:" + calorie);
+
                 calorie = calorie + foodCalorie;
-                calorieBean.setCalorie(food);
+                calorieBean.setCalories(calorie);
                 Log.d("calorie", "calorie2:" + calorie);
 
 
@@ -138,8 +142,19 @@ public class FoodList extends AppCompatActivity {
                 calorieBean.setProtein(protein1);
 
             }
+
         }
         String s = new Gson().toJson(beans);
         SharePreferenceUtil.getInstance().put(FoodList.this, "stepList", s);
+
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish(); // back button
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

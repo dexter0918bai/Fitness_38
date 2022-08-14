@@ -2,47 +2,43 @@ package edu.neu.fitness_38;
 
 public class CalorieBean {
     private String date;
-    private int step;
-    private double calorie;
+    private int stepCount;
+    private float calories;
 
-    private double Protein = 0.01;
-    private double Fat=0.01;
-    private double Carb=0.01;
+    private double Protein = 0.1;
+    private double Fat = 0.1;
+    private double Carb = 0.1;
 
-    public void setCalorie(double calorie) {
-        this.calorie = calorie;
-    }
-
-    public Double getProtein() {
+    public double getProtein() {
         return Protein;
     }
 
-    public void setProtein(Double protein) {
+    public void setProtein(double protein) {
         Protein = protein;
     }
 
-    public Double getFat() {
+    public double getFat() {
         return Fat;
     }
 
-    public void setFat(Double fat) {
+    public void setFat(double fat) {
         Fat = fat;
     }
 
-    public Double getCarb() {
+    public double getCarb() {
         return Carb;
     }
 
-    public void setCarb(Double carb) {
+    public void setCarb(double carb) {
         Carb = carb;
     }
 
-    public Double getCalorie() {
-        return calorie;
+    public float getCalories() {
+        return calories;
     }
 
-    public void setCalorie(Double calorie) {
-        this.calorie = calorie;
+    public void setCalories(float calories) {
+        this.calories = calories;
     }
 
     public String getDate() {
@@ -53,20 +49,11 @@ public class CalorieBean {
         this.date = date;
     }
 
-    public int getStep() {
-        return step;
+    public int getStepCount() {
+        return stepCount;
     }
 
-    public void setStep(int step) {
-        this.step = step;
-    }
-
-    @Override
-    public String toString() {
-        return "FitnessBean{" +
-                "date='" + date + '\'' +
-                ", step=" + step +
-                '}';
+    public void setStepCount(int stepCount) {
+        this.stepCount = stepCount;
     }
 }
-
